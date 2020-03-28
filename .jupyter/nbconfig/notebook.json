@@ -1,0 +1,28 @@
+{
+  "load_extensions": {
+    "nglview-js-widgets/extension": true,
+    "jupyter-js-widgets/extension": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "ipyvolume/extension": true,
+    "jupyter-webrtc/extension": true,
+    "plotlywidget/extension": true,
+    "toc2/main": true,
+    "collapsible_headings/main": true,
+    "nglview": false
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": true
+    }
+  },
+  "scrollDownIsEnabled": false,
+  "rise": {
+    "auto_select": "code",
+    "transition": "none",
+    "theme": "white",
+    "width": "100%"
+  },
+  "toc2": {
+    "number_sections": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "Exporter": {
+    "template_path": [
+      "/Users/lily/anaconda3/lib/python3.6/site-packages/jupyter_contrib_nbextensions/templates"
+    ]
+  }
+}

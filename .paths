@@ -1,0 +1,10 @@
+# paths to save
+# unix-style (glob)
+# default destination: here
+# SOURCE                             DESTINATION                 REGEX
+# ==============                     ================            ===========
+
+~/.bash_aliases
+~/.vmdrc
+~/.jupyter
+~/anaconda3/envs/**/env_vars.sh      conda/${ENV}/${DIRNAME}/    /(?P<ENV>[\w-]+?)/etc/conda/(?P<DIRNAME>[\w.]+?)/env_vars.sh

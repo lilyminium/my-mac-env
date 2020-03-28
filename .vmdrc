@@ -1,0 +1,273 @@
+############################################################################
+#cr                                                                       
+#cr            (C) Copyright 1995-2007 The Board of Trustees of the            
+#cr                        University of Illinois                         
+#cr                         All Rights Reserved                           
+#cr                                                                       
+############################################################################
+
+############################################################################
+# RCS INFORMATION:
+#
+#       $RCSfile: .vmdrc,v $
+#       $Author: johns $        $Locker:  $                $State: Exp $
+#       $Revision: 1.9 $      $Date: 2007/01/12 20:12:44 $
+#       
+############################################################################
+# DESCRIPTION:
+#
+# VMD startup script.  The commands here are executed as soon as VMD starts up
+############################################################################
+#
+#       Modified by Josh Mitchell
+#                   Alex Schumann-Gillett
+#                   Lily Wang (2018)
+#
+
+############################################################################
+# Colours by Josh
+############################################################################
+
+# Prettify colours
+# Whoever picked the original VMD colour scheme... sigh
+# For instance, there's no yellow, just a few disgustingly bright greens
+# I like these ones better
+# Commented ones are defaults
+
+color change rgb 0   0.16   0.33   0.62    ;# blue
+#color change rgb 1   1.0    0.0    0.0     ;# red
+color change rgb 2   0.25   0.25   0.23    ;# gray
+color change rgb 3   1.0    0.5    0.0     ;# orange
+color change rgb 4   1.0    0.73   0.0     ;# yellow
+#color change rgb 5   0.5    0.5    0.2     ;# tan
+#color change rgb 6   0.6    0.6    0.6     ;# silver
+color change rgb 7   0.0    0.9    0.04    ;# green
+#color change rgb 8   1.0    1.0    1.0     ;# white
+#color change rgb 9   1.0    0.6    0.6     ;# pink
+#color change rgb 10  0.25   0.75   0.75    ;# cyan
+#color change rgb 11  0.65   0.0    0.65    ;# purple
+#color change rgb 12  0.5    0.9    0.4     ;# lime
+#color change rgb 13  0.9    0.4    0.7     ;# mauve
+color change rgb 14  0.4    0.0    0.0     ;# ochre
+#color change rgb 15  0.5    0.5    0.75    ;# iceblue
+#color change rgb 16  0.0    0.0    0.0     ;# black
+color change rgb 17  1.0    0.95   0.0     ;# yellow2
+color change rgb 18  0.88   0.97   0.02    ;# yellow3
+color change rgb 19  0.25   0.62   0.11    ;# green2
+#color change rgb 20  0.0    0.9    0.5     ;# green3
+#color change rgb 21  0.0    0.88   1.0     ;# cyan2
+#color change rgb 22  0.0    0.76   1.0     ;# cyan3
+color change rgb 23  0.25   0.50   1.0     ;# blue2
+color change rgb 24  0.01   0.04   0.93    ;# blue3
+#color change rgb 25  0.27   0.0    0.98    ;# violet
+#color change rgb 26  0.45   0.0    0.9     ;# violet2
+#color change rgb 27  0.9    0.0    0.9     ;# magenta
+#color change rgb 28  1.0    0.0    0.66    ;# magenta2
+color change rgb 29  0.82   0.0    0.0     ;# red2
+color change rgb 30  1.0    0.1    0.2     ;# red3
+color change rgb 31  0.89   0.35   0.0     ;# orange2
+color change rgb 32  0.98   0.39   0.15    ;# orange3
+
+############################################################################
+# Commands by Lily
+############################################################################
+# Thanks to https://stackoverflow.com/questions/9475542/adding-help-to-the-user-defined-functions-in-tcl
+proc help {procname} {
+    puts %::helptext{$procname}
+}
+
+proc addhelp {procname text} {
+    set ::helptext{$procname} $text
+}
+
+proc delall {{molid top}} {
+    # delete all representations
+    set numrep [molinfo $molid get numreps]
+    for {set i 0} {$i < $numrep} {incr i} {
+      mol delrep 0 $molid
+    }
+}
+addhelp delall "Delete all representations"
+
+proc matall {{material AOChalky} {molid top}} {
+    # Change all materials
+    set numrep [molinfo $molid get numreps]
+    for {set i 0} {$i < $numrep} {incr i} {
+      mol modmaterial $i $molid $material
+    }
+}
+addhelp matall "Change materials of all representations to this"
+
+proc repall {{style CPK} {molid top}} {
+    # Change all materials
+    set numrep [molinfo $molid get numreps]
+    for {set i 0} {$i < $numrep} {incr i} {
+      mol modstyle $i $molid $style
+    }
+}
+
+proc revall {{molid top}} {
+    # reverse representations
+    set numrep [molinfo $molid get numreps]
+    incr numrep -1
+    for {set i $numrep} {$i >= 0} {incr i -1} {
+      set current_sel [molinfo $molid get "{selection $i}"]
+      set current_col [molinfo $molid get "{color $i}"]
+      set current_mat [molinfo $molid get "{material $i}"]
+      set current_rep [molinfo $molid get "{rep $i}"]
+
+      mol showrep $molid $i off
+
+      catch {
+        set col $current_col
+        set col [expr $current_col]
+      }
+
+      catch {
+        set rep $current_rep
+        set rep [expr $current_rep]
+      }
+
+      catch {
+        set sel $current_sel
+        set sel [expr $current_sel]
+      }
+
+      catch {
+        set mat $current_mat
+        set mat [expr $current_mat]
+      }
+
+      mol selection $sel
+      mol color $col
+      mol representation $rep
+      mol material $mat
+      mol addrep $molid
+    }
+
+    for {set i 0} {$i <= $numrep} {incr i} {
+      mol delrep 0 $molid
+    }
+}
+addhelp revall "Reverse the order of all representations for tachyrender"
+
+proc tachyrender {{filename "pic"} {res1 2048} {res2 2048}} {
+
+    # save picture
+    #
+    # filename  : string or path (no extension)
+    #     res1  : int (resolution, default 2048)
+    #     res2  : int (resolution, default 2048)
+    #
+    # !--------- NOT WORKING? CHANGE TACHYON COMMAND TO OWN PATH! ---------!
+    set tachyon "'/Applications/VMD\ 1.9.3.app/Contents/vmd/tachyon_MACOSXX86'"
+    #
+    
+    axes location off
+    stage location off
+    display projection orthographic
+    display depthcue off
+    display shadows on
+    display ambientocclusion on
+
+    puts "rendering to $filename.tga"
+    puts "resolution $res1 $res2"
+    render Tachyon $filename $tachyon %s -aasamples 12 -format TARGA -trans_max_surfaces 1 -fullshade -o %s.tga -res $res1 $res2
+    axes location LowerLeft
+
+}
+
+addhelp tachyrender "Render using Tachyon"
+
+proc rotrender {filename {axis "x"} {res1 2048} {res2 2048}} {
+    puts "Rotating around $axis axis"
+    tachyrender ${filename}_${axis}_000 $res1 $res2
+    rotate $axis by 90
+    tachyrender ${filename}_${axis}_090 $res1 $res2
+    rotate $axis by 90
+    tachyrender ${filename}_${axis}_180 $res1 $res2
+    rotate $axis by 90
+    tachyrender ${filename}_${axis}_270 $res1 $res2
+    rotate $axis by 90
+}
+
+############################################################################
+# Materials by Alex
+############################################################################
+display rendermode GLSL
+material add CoolWater 
+material change ambient CoolWater 0.30
+material change diffuse CoolWater 0.50
+material change specular CoolWater 0.87
+material change shininess CoolWater 0.85
+material change opacity CoolWater 0.11
+
+material add Bag
+material change ambient Bag 0.52
+material change diffuse Bag 0.31
+material change specular Bag 0.00
+material change shininess Bag 0.00
+material change opacity Bag 0.48
+
+
+# turn on lights 0 and 1
+light 0 on
+light 1 on
+light 2 off
+light 3 off
+
+# position the stage and axes
+axes location off # lowerleft
+stage location off
+
+# position and turn on menus
+menu main     move 5   225
+menu display  move 395 30
+menu graphics move 395 500
+menu color    move 125 225
+menu files    move 125 325
+menu labels   move 125 525
+menu render   move 125 525
+
+menu main      on
+menu display  on
+menu graphics on
+#menu color    on
+#menu labels   on
+#menu render   on
+#menu files    on
+
+color Display Background white 
+color Labels Atoms black
+color Labels Bonds black
+color Labels Angles black
+display projection orthographic
+display rendermode GLSL
+display depthcue off
+
+
+# User's default values for newly loaded molecules/reps, etc
+#  mol default color {colorID 5}
+#mol default representation NewCartoon
+#  mol default selection {name CA}
+
+mol default material AOChalky
+mol default representation CPK
+
+
+puts "help {procname} for anything"
+puts "User defined commands: delall matall tachyrender revall rotrender"
+
+
+
+  # <custom>
+  # state : active
+  if { 1 } {
+    #
+    # <custom entry>
+    # Description: Load our topology viewer extension
+vmd_install_extension topologyviewer topologyviewer_tk "Modeling/Topology Viewer"
+    # </custom entry>
+    #
+  }
+  # </custom>
