@@ -39,6 +39,8 @@ alias subl='sublime'
 alias rebash='echo "    sourcing ~/.bashrc" && source ~/.bashrc'
 alias aliases='vim ~/.bash_aliases'
 alias mdtest='pytest --disable-pytest-warnings --maxfail=1'
+alias untarbz='tar -zxvf'
+alias untargz='tar -xv'
 
 function omara {
     if [ ! -d "$OMARA" ]; then
