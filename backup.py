@@ -11,9 +11,10 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+
 class RegexPath:
 
-    #: finds all groups within a ${GROUP} 
+    #: finds all groups within a ${GROUP}
     pattern = re.compile('(?<=\${)([^${}]*)(?=})')
 
     def __init__(self, path):
@@ -21,7 +22,7 @@ class RegexPath:
             path = Path(path)
         self._raw = path.expanduser().resolve()
         self.vars = re.findall(self.pattern, str(path))
-    
+
     def replace_from(self, match):
         path = str(self._raw)
         if match:
@@ -35,7 +36,7 @@ def copy_files(filename, comment='#'):
     here = Path.cwd()
     with open(filename, 'r') as f:
         contents = f.readlines()
-    
+
     lines = [x.split(comment)[0].strip() for x in contents]
     lines = [x.split() for x in lines if x]
     for line in lines:
@@ -77,7 +78,7 @@ def copy_conda_envs(conda_root='~/anaconda3/'):
     root = Path(conda_root).expanduser().resolve()
     envs_dir = root / 'envs'
     conda_exe = root / 'bin' / 'conda'
-    envs = sorted([env for env in envs_dir.glob('*/') 
+    envs = sorted([env for env in envs_dir.glob('*/')
                    if not env.name.startswith('.')])
     for env in envs:
         name = env.name
@@ -85,10 +86,11 @@ def copy_conda_envs(conda_root='~/anaconda3/'):
         env_dir.mkdir(parents=True, exist_ok=True)
         env_yml = env_dir / 'environment.yml'
         fh = env_yml.open(mode='w')
-        cmd = [str(conda_exe), 'env', 'export', '--name', name]
+        cmd = [str(conda_exe), 'env', 'export', '--name', name, '--no-builds']
         proc = subprocess.run(cmd, stdout=fh)
         fh.close()
         logger.debug(' '.join(cmd) + f' > {str(env_yml)}')
+
 
 def push_to_git():
     logger.info('=== Pushing to git ===\n')
@@ -100,7 +102,6 @@ def push_to_git():
     subprocess.run(add, cwd=git_dir)
     subprocess.run(commit, cwd=git_dir)
     subprocess.run(push, cwd=git_dir)
-
 
 
 if __name__ == '__main__':
@@ -115,6 +116,4 @@ if __name__ == '__main__':
     end_time = datetime.datetime.now()
     logger.info(f'=== Finished {end_time.strftime(date_fmt)} ===')
     push_to_git()
-
-
 
