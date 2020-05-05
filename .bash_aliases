@@ -61,6 +61,11 @@ function scratch {
         ssh -t gadi "cd /scratch/${NCI_PROJECT}/${NCI_USER} && exec ${SHELL} -l"
 }
 
+function weather {
+    dest=${1:-Melbourne}
+    curl v2.wttr.in/${dest}
+}
+
 
 function tunnel {
     port=$1
