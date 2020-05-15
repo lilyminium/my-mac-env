@@ -1094,3 +1094,42 @@ Copied /Users/lily/anaconda3/envs/py27/etc/conda/deactivate.d/env_vars.sh to /Us
 === Finished 14/05/2020 03:02:19  ===
 === Pushing to git ===
 
+=== Started 16/05/2020 03:00:00  ===
+>>> Copying files from .paths
+Copied /Users/lily/.bash_aliases to /Users/lily/pydev/my-mac-env/.bash_aliases
+Copied /Users/lily/.vmdrc to /Users/lily/pydev/my-mac-env/.vmdrc
+Copied /Users/lily/.jupyter to /Users/lily/pydev/my-mac-env/.jupyter
+Copied /Users/lily/anaconda3/envs/rdkit-dev/etc/conda/activate.d/env_vars.sh to /Users/lily/pydev/my-mac-env/conda/rdkit-dev/activate.d/env_vars.sh
+Copied /Users/lily/anaconda3/envs/rdkit-dev/etc/conda/deactivate.d/env_vars.sh to /Users/lily/pydev/my-mac-env/conda/rdkit-dev/deactivate.d/env_vars.sh
+Copied /Users/lily/anaconda3/envs/py27/etc/conda/activate.d/env_vars.sh to /Users/lily/pydev/my-mac-env/conda/py27/activate.d/env_vars.sh
+Copied /Users/lily/anaconda3/envs/py27/etc/conda/deactivate.d/env_vars.sh to /Users/lily/pydev/my-mac-env/conda/py27/deactivate.d/env_vars.sh
+>>> Saving conda environments from ~/anaconda3/
+/Users/lily/anaconda3/bin/conda env export --name RESP2 --no-builds > conda/RESP2/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name ccpy36 --no-builds > conda/ccpy36/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name chem3208 --no-builds > conda/chem3208/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name dash-ngl --no-builds > conda/dash-ngl/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name deepchem --no-builds > conda/deepchem/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name docs --no-builds > conda/docs/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda --no-builds > conda/mda/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda-38 --no-builds > conda/mda-38/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda-py27 --no-builds > conda/mda-py27/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda-py38 --no-builds > conda/mda-py38/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda-user-guide --no-builds > conda/mda-user-guide/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda0170 --no-builds > conda/mda0170/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda0180 --no-builds > conda/mda0180/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda0190 --no-builds > conda/mda0190/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mda0192 --no-builds > conda/mda0192/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name mdanalysis --no-builds > conda/mdanalysis/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name polytop --no-builds > conda/polytop/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name psi4 --no-builds > conda/psi4/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name psiresp --no-builds > conda/psiresp/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name py27 --no-builds > conda/py27/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name py36 --no-builds > conda/py36/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name py37 --no-builds > conda/py37/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name pyconau19 --no-builds > conda/pyconau19/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name pytorch --no-builds > conda/pytorch/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name rdkit-dev --no-builds > conda/rdkit-dev/environment.yml
+/Users/lily/anaconda3/bin/conda env export --name webdev --no-builds > conda/webdev/environment.yml
+=== Finished 16/05/2020 03:01:50  ===
+=== Pushing to git ===
+
