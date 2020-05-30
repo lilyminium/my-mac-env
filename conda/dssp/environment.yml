@@ -1,0 +1,63 @@
+name: dssp
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beautifulsoup4=4.9.1
+  - brotlipy=0.7.0
+  - bzip2=1.0.8
+  - ca-certificates=2020.4.5.1
+  - certifi=2020.4.5.1
+  - cffi=1.14.0
+  - chardet=3.0.4
+  - conda=4.8.3
+  - conda-build=3.19.2
+  - conda-package-handling=1.6.0
+  - cryptography=2.9.2
+  - filelock=3.0.12
+  - glob2=0.7
+  - icu=67.1
+  - idna=2.9
+  - jinja2=2.11.2
+  - libarchive=3.3.3
+  - libcxx=10.0.0
+  - libffi=3.2.1
+  - libiconv=1.15
+  - liblief=0.9.0
+  - libxml2=2.9.10
+  - lz4-c=1.9.2
+  - lzo=2.10
+  - markupsafe=1.1.1
+  - ncurses=6.1
+  - openssl=1.1.1g
+  - pip=20.1.1
+  - pkginfo=1.5.0.1
+  - psutil=5.7.0
+  - py-lief=0.9.0
+  - pycosat=0.6.3
+  - pycparser=2.20
+  - pyopenssl=19.1.0
+  - pysocks=1.7.1
+  - python=3.7.6
+  - python-libarchive-c=2.9
+  - python_abi=3.7
+  - pytz=2020.1
+  - pyyaml=5.3.1
+  - readline=8.0
+  - requests=2.23.0
+  - ripgrep=12.1.1
+  - ruamel_yaml=0.15.80
+  - setuptools=47.1.1
+  - six=1.15.0
+  - soupsieve=2.0.1
+  - sqlite=3.30.1
+  - tk=8.6.10
+  - tqdm=4.46.0
+  - urllib3=1.25.9
+  - wheel=0.34.2
+  - xz=5.2.5
+  - yaml=0.2.4
+  - zlib=1.2.11
+  - zstd=1.4.4
+prefix: /Users/lily/anaconda3/envs/dssp
+

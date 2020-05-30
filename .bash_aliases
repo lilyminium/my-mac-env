@@ -28,6 +28,8 @@ alias dev='cd $HOME/pydev'
 alias cpc='cd $CPC'
 alias mp='cd $MYHD'
 
+alias cbk='cd $WORKSPACE/cbk/'
+
 # envs
 alias mda='conda activate mda && cd $DEV/mdanalysis && git status'
 alias rdk='conda activate rdkit-dev && cd $DEV/rdkit && git status'
