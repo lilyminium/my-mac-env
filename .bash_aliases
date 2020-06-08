@@ -137,8 +137,8 @@ function getpr {
 
     n=$'\n'  # sigh
     pr=$1
-    branchname=${2:-tmppr}
-    src=${3:-upstream}
+    src=${2:-upstream}
+    branchname="pr${pr}"
     cmd="git fetch $src pull/${pr}/head:${branchname}"
     read -p "    $cmd$n    Press y to continue.$n" toexe
     case $toexe in
