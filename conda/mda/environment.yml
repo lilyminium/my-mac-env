@@ -22,6 +22,9 @@ dependencies:
   - cffi=1.14.0
   - cftime=1.1.3
   - chardet=3.0.4
+  - chemfiles=0.9.1
+  - chemfiles-lib=0.9.3
+  - chemfiles-python=0.9.3
   - click=7.1.2
   - clustalw=2.1
   - codecov=2.0.15
@@ -195,6 +198,7 @@ dependencies:
     - more-itertools==7.0.0
     - moviepy==1.0.1
     - msgpack==0.6.1
+    - msmb-theme==1.2.0
     - nbdime==2.0.0
     - nbsphinx==0.5.1
     - networkx==2.3
