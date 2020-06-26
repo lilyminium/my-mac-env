@@ -1,0 +1,6 @@
+name: empty
+channels:
+  - conda-forge
+  - defaults
+prefix: /Users/lily/anaconda3/envs/empty
+
