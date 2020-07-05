@@ -1,50 +1,67 @@
 name: mdanalysis
 channels:
+  - biobuilds
   - conda-forge
   - defaults
 dependencies:
   - alabaster=0.7.12
+  - apipkg=1.5
   - appnope=0.1.0
   - atomicwrites=1.3.0
   - attrs=19.3.0
   - babel=2.8.0
-  - backcall=0.1.0
-  - biopython=1.76
+  - biopython=1.77
   - bleach=3.1.5
+  - bokeh=2.1.1
   - brotlipy=0.7.0
   - bzip2=1.0.8
-  - ca-certificates=2020.4.5.2
-  - certifi=2020.4.5.2
+  - ca-certificates=2020.6.20
+  - certifi=2020.6.20
   - cffi=1.14.0
   - cftime=1.1.3
   - chardet=3.0.4
+  - chemfiles=0.9.1
+  - chemfiles-lib=0.9.3
+  - chemfiles-python=0.9.3
+  - click=7.1.2
+  - cloudpickle=1.5.0
+  - clustalw=2.1
+  - codecov=2.1.7
+  - coverage=5.1
   - cryptography=2.9.2
   - curl=7.69.1
   - cycler=0.10.0
+  - cython=0.29.20
+  - cytoolz=0.10.1
+  - dask=2.20.0
+  - dask-core=2.20.0
   - decorator=4.4.2
   - defusedxml=0.6.0
+  - distributed=2.20.0
   - docutils=0.16
   - entrypoints=0.3
+  - execnet=1.7.1
   - freetype=2.10.2
+  - fsspec=0.7.4
   - griddataformats=0.5.0
-  - gsd=2.1.1
+  - gsd=1.9.3
   - hdf4=4.2.13
   - hdf5=1.10.6
+  - heapdict=1.0.1
   - icu=67.1
-  - idna=2.9
+  - idna=2.10
   - imagesize=1.2.0
-  - importlib-metadata=1.6.1
-  - importlib_metadata=1.6.1
+  - importlib-metadata=1.7.0
+  - importlib_metadata=1.7.0
   - ipykernel=5.3.0
-  - ipython=7.15.0
+  - ipython=5.8.0
   - ipython_genutils=0.2.0
   - ipywidgets=7.5.1
-  - jedi=0.17.0
   - jinja2=2.11.2
-  - joblib=0.15.1
+  - joblib=0.16.0
   - jpeg=9d
-  - jsonschema=3.2.0
-  - jupyter_client=6.1.3
+  - jsonschema=2.6.0
+  - jupyter_client=6.1.5
   - jupyter_contrib_core=0.3.3
   - jupyter_contrib_nbextensions=0.5.1
   - jupyter_core=4.6.3
@@ -63,16 +80,21 @@ dependencies:
   - libiconv=1.15
   - liblapack=3.8.0
   - libnetcdf=4.7.4
-  - libopenblas=0.3.9
+  - libopenblas=0.3.10
   - libpng=1.6.37
   - libsodium=1.0.17
-  - libssh2=1.9.0
+  - libssh2=1.8.0
+  - libtiff=4.1.0
+  - libwebp-base=1.1.0
   - libxml2=2.9.10
   - libxslt=1.1.33
   - llvm-openmp=10.0.0
+  - locket=0.2.0
   - lxml=4.5.1
+  - lz4-c=1.9.2
   - markupsafe=1.1.1
-  - matplotlib-base=3.2.1
+  - matplotlib=3.2.2
+  - matplotlib-base=3.2.2
   - mdanalysis=1.0.0
   - mdanalysisdata=0.8.0
   - mistune=0.8.4
@@ -87,27 +109,30 @@ dependencies:
   - nglview=2.7.1
   - notebook=6.0.3
   - numpy=1.18.5
+  - olefile=0.46
   - openssl=1.1.1g
   - packaging=20.4
-  - pandas=1.0.4
+  - pandas=1.0.5
   - pandoc=2.9.2.1
   - pandocfilters=1.4.2
-  - parso=0.7.0
+  - partd=1.1.0
   - patsy=0.5.1
   - pexpect=4.8.0
   - pickleshare=0.7.5
   - pip=20.1.1
   - pluggy=0.13.0
   - prometheus_client=0.8.0
-  - prompt-toolkit=3.0.5
+  - prompt_toolkit=1.0.15
   - ptyprocess=0.6.0
   - py=1.8.0
   - pycparser=2.20
   - pygments=2.4.2
   - pyopenssl=19.1.0
   - pyparsing=2.4.7
-  - pyrsistent=0.16.0
   - pysocks=1.7.1
+  - pytest-cov=2.10.0
+  - pytest-forked=1.2.0
+  - pytest-xdist=1.32.0
   - python=3.7.6
   - python-dateutil=2.8.1
   - python_abi=3.7
@@ -115,43 +140,46 @@ dependencies:
   - pyyaml=5.3.1
   - pyzmq=19.0.1
   - readline=8.0
-  - requests=2.23.0
+  - requests=2.24.0
   - scikit-learn=0.23.1
-  - scipy=1.4.1
-  - seaborn=0.10.1
-  - seaborn-base=0.10.1
+  - scipy=1.5.0
+  - seaborn=0.8.1
   - send2trash=1.5.0
-  - setuptools=47.1.1
+  - setuptools=47.3.1
+  - simplegeneric=0.8.1
   - six=1.15.0
   - snowballstemmer=2.0.0
-  - sphinx=2.2.1
-  - sphinxcontrib-applehelp=1.0.2
-  - sphinxcontrib-devhelp=1.0.2
-  - sphinxcontrib-htmlhelp=1.0.3
-  - sphinxcontrib-jsmath=1.0.1
-  - sphinxcontrib-qthelp=1.0.3
-  - sphinxcontrib-serializinghtml=1.1.4
-  - sqlite=3.30.1
+  - sortedcontainers=2.2.2
+  - sphinx=1.8.5
+  - sphinxcontrib-websupport=1.2.3
+  - sqlite=3.32.3
   - statsmodels=0.11.1
+  - tblib=1.6.0
   - terminado=0.8.3
   - testpath=0.4.4
   - threadpoolctl=2.1.0
+  - tidynamics=1.0.0
   - tk=8.6.10
+  - toolz=0.10.0
   - tornado=6.0.4
   - traitlets=4.3.3
+  - typing_extensions=3.7.4.2
   - urllib3=1.25.9
-  - wcwidth=0.2.4
+  - wcwidth=0.2.5
   - webencodings=0.5.1
   - wheel=0.34.2
   - widgetsnbextension=3.5.1
   - xz=5.2.5
   - yaml=0.2.5
   - zeromq=4.3.2
+  - zict=2.0.0
   - zipp=3.1.0
   - zlib=1.2.11
+  - zstd=1.4.4
   - pip:
     - argh==0.26.2
-    - cython==0.29.20
+    - citeproc-py==0.5.1
+    - duecredit==0.8.0
     - hypothesis==4.44.2
     - imageio==2.6.1
     - imageio-ffmpeg==0.3.0
@@ -160,6 +188,7 @@ dependencies:
     - mock==3.0.5
     - more-itertools==8.3.0
     - moviepy==1.0.1
+    - msmb-theme==1.2.0
     - oset==0.1.3
     - parmed==3.2.0
     - pathtools==0.1.2
@@ -170,8 +199,8 @@ dependencies:
     - pybtex-docutils==0.2.2
     - pytest==5.2.2
     - sphinx-gallery==0.4.0
-    - sphinx-rtd-theme==0.4.3
-    - sphinx-sitemap==1.0.2
+    - sphinx-rtd-theme==0.5.0
+    - sphinx-sitemap==2.1.0
     - sphinxcontrib-bibtex==1.0.0
     - tabulate==0.8.5
     - tqdm==4.38.0

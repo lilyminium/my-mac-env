@@ -1,242 +1,162 @@
 name: mda
 channels:
-  - plotly
-  - biobuilds
-  - ambermd
   - conda-forge
   - defaults
 dependencies:
   - alabaster=0.7.12
-  - ambertools=19.0
-  - apipkg=1.5
-  - appdirs=1.4.3
   - appnope=0.1.0
-  - autopep8=1.5
+  - attrs=19.3.0
   - babel=2.8.0
-  - backcall=0.1.0
-  - black=19.10b0
+  - backcall=0.2.0
   - bleach=3.1.5
+  - bokeh=2.1.1
   - brotlipy=0.7.0
-  - bzip2=1.0.8
   - ca-certificates=2020.6.20
   - certifi=2020.6.20
   - cffi=1.14.0
-  - cftime=1.1.3
   - chardet=3.0.4
-  - chemfiles=0.9.1
-  - chemfiles-lib=0.9.3
-  - chemfiles-python=0.9.3
   - click=7.1.2
-  - clustalw=2.1
-  - codecov=2.0.15
-  - coverage=5.1
+  - cloudpickle=1.5.0
   - cryptography=2.9.2
-  - curl=7.69.1
-  - cython=0.29.15
-  - dbus=1.13.6
+  - cython=0.29.20
+  - cytoolz=0.10.1
+  - dask=2.20.0
+  - dask-core=2.20.0
+  - decorator=4.4.2
   - defusedxml=0.6.0
+  - distributed=2.20.0
   - docutils=0.16
   - entrypoints=0.3
-  - execnet=1.7.1
-  - expat=2.2.9
   - freetype=2.10.2
-  - gettext=0.19.8.1
-  - glib=2.64.2
-  - hdf4=4.2.13
-  - hdf5=1.10.5
-  - icu=64.2
-  - idna=2.9
+  - fsspec=0.7.4
+  - heapdict=1.0.1
+  - idna=2.10
   - imagesize=1.2.0
-  - importlib_metadata=1.6.0
-  - ipykernel=5.1.4
-  - ipython=7.14.0
+  - importlib-metadata=1.7.0
+  - importlib_metadata=1.7.0
+  - ipykernel=5.3.0
+  - ipython=7.16.1
   - ipython_genutils=0.2.0
   - ipywidgets=7.5.1
-  - jedi=0.17.0
+  - jedi=0.17.1
   - jinja2=2.11.2
-  - jpeg=9c
+  - joblib=0.16.0
+  - jpeg=9d
   - jsonschema=3.2.0
-  - jupyter=1.0.0
-  - jupyter_client=6.1.3
-  - jupyter_console=6.1.0
-  - jupyter_contrib_core=0.3.3
-  - jupyter_contrib_nbextensions=0.5.1
+  - jupyter_client=6.1.5
   - jupyter_core=4.6.3
-  - jupyter_highlight_selected_word=0.2.0
-  - jupyter_latex_envs=1.4.4
-  - jupyter_nbextensions_configurator=0.4.1
-  - krb5=1.17.1
   - libblas=3.8.0
   - libcblas=3.8.0
-  - libclang=9.0.1
-  - libcurl=7.69.1
   - libcxx=10.0.0
-  - libedit=3.1.20170329
   - libffi=3.2.1
   - libgfortran=4.0.0
-  - libiconv=1.15
   - liblapack=3.8.0
-  - libllvm9=9.0.1
-  - libnetcdf=4.7.3
-  - libopenblas=0.3.9
+  - libopenblas=0.3.10
   - libpng=1.6.37
-  - libpq=12.2
   - libsodium=1.0.17
-  - libssh2=1.8.2
-  - libxml2=2.9.10
-  - libxslt=1.1.33
+  - libtiff=4.1.0
+  - libwebp-base=1.1.0
   - llvm-openmp=10.0.0
-  - lxml=4.5.0
+  - locket=0.2.0
+  - lz4-c=1.9.2
   - markupsafe=1.1.1
-  - matplotlib-base=3.1.3
   - mdanalysisdata=0.8.0
   - mistune=0.8.4
   - msgpack-python=1.0.0
-  - mypy_extensions=0.4.3
   - nbconvert=5.6.1
   - nbformat=5.0.6
   - ncurses=6.1
-  - netcdf4=1.5.3
   - nglview=2.7.1
   - notebook=6.0.3
-  - nspr=4.20
-  - nss=3.47
-  - numpy=1.18.1
+  - numpy=1.18.5
+  - olefile=0.46
   - openssl=1.1.1g
-  - pandas=1.0.3
+  - packaging=20.4
+  - pandas=1.0.5
   - pandoc=2.9.2.1
   - pandocfilters=1.4.2
   - parso=0.7.0
-  - pathspec=0.8.0
-  - pathtools=0.1.2
-  - patsy=0.5.1
-  - pcre=8.44
+  - partd=1.1.0
   - pexpect=4.8.0
   - pickleshare=0.7.5
-  - pip=20.1
-  - plotly=4.5.1
-  - prometheus_client=0.7.1
+  - pillow=7.2.0
+  - pip=20.1.1
+  - prometheus_client=0.8.0
   - prompt-toolkit=3.0.5
-  - prompt_toolkit=3.0.5
+  - psutil=5.7.0
   - ptyprocess=0.6.0
-  - pycodestyle=2.6.0
   - pycparser=2.20
   - pygments=2.6.1
   - pyopenssl=19.1.0
-  - pyqt=5.12.3
+  - pyparsing=2.4.7
   - pyrsistent=0.16.0
   - pysocks=1.7.1
-  - pytest-forked=1.1.2
-  - pytest-xdist=1.32.0
   - python=3.7.6
+  - python-dateutil=2.8.1
   - python_abi=3.7
   - pytz=2020.1
   - pyyaml=5.3.1
   - pyzmq=19.0.1
-  - qt=5.12.5
-  - qtconsole=4.7.4
-  - qtpy=1.9.0
   - readline=8.0
-  - regex=2020.5.14
-  - requests=2.23.0
-  - retrying=1.3.3
-  - scikit-learn=0.22.2.post1
-  - seaborn=0.9.0
+  - requests=2.24.0
+  - scikit-learn=0.23.1
+  - scipy=1.5.0
   - send2trash=1.5.0
-  - setuptools=46.3.0
+  - setuptools=47.3.1
+  - six=1.15.0
   - snowballstemmer=2.0.0
-  - sortedcontainers=2.1.0
-  - sphinx=2.2.0
+  - sortedcontainers=2.2.2
+  - sphinx=3.1.1
   - sphinxcontrib-applehelp=1.0.2
   - sphinxcontrib-devhelp=1.0.2
   - sphinxcontrib-htmlhelp=1.0.3
   - sphinxcontrib-jsmath=1.0.1
   - sphinxcontrib-qthelp=1.0.3
   - sphinxcontrib-serializinghtml=1.1.4
-  - sphinxcontrib-websupport=1.2.2
-  - sqlite=3.30.1
-  - statsmodels=0.11.1
-  - tabulate=0.8.5
+  - sqlite=3.32.3
+  - tblib=1.6.0
   - terminado=0.8.3
   - testpath=0.4.4
-  - tidynamics=1.0.0
+  - threadpoolctl=2.1.0
   - tk=8.6.10
-  - toml=0.10.1
+  - toolz=0.10.0
   - tornado=6.0.4
+  - tqdm=4.47.0
   - traitlets=4.3.3
-  - typed-ast=1.4.1
   - typing_extensions=3.7.4.2
   - urllib3=1.25.9
+  - wcwidth=0.2.5
   - webencodings=0.5.1
   - wheel=0.34.2
   - widgetsnbextension=3.5.1
   - xz=5.2.5
-  - yaml=0.2.4
+  - yaml=0.2.5
   - zeromq=4.3.2
+  - zict=2.0.0
+  - zipp=3.1.0
   - zlib=1.2.11
+  - zstd=1.4.4
   - pip:
-    - argh==0.26.2
-    - astor==0.8.1
-    - atomicwrites==1.3.0
-    - attrs==19.1.0
-    - biopython==1.73
-    - colorama==0.4.3
+    - appdirs==1.4.4
+    - biopython==1.77
+    - black==19.10b0
     - cycler==0.10.0
-    - decorator==4.4.0
-    - gitdb==4.0.5
-    - gitpython==3.1.3
     - griddataformats==0.5.0
-    - gsd==1.7.0
-    - hypothesis==4.24.5
-    - imageio==2.6.1
-    - imageio-ffmpeg==0.3.0
-    - importlib-metadata==0.18
-    - joblib==0.13.2
-    - kiwisolver==1.1.0
-    - latexcodec==2.0.0
-    - line-profiler==3.0.2
-    - matplotlib==3.1.0
-    - mmpbsa-py==16.0
+    - gsd==2.1.2
+    - hypothesis==5.19.0
+    - kiwisolver==1.2.0
+    - matplotlib==3.2.2
     - mmtf-python==1.1.2
-    - mock==3.0.5
-    - more-itertools==7.0.0
-    - moviepy==1.0.1
-    - msgpack==0.6.1
-    - msmb-theme==1.2.0
-    - nbdime==2.0.0
-    - nbsphinx==0.5.1
-    - networkx==2.3
-    - oset==0.1.3
-    - packaging==19.0
-    - packmol-memgen==1.0.5rc0
-    - parmed==3.2.0
-    - pdb4amber==1.7.dev0
-    - pillow==6.1.0
-    - pluggy==0.12.0
-    - proglog==0.1.9
-    - psutil==5.6.3
-    - py==1.8.0
-    - pybtex==0.22.2
-    - pybtex-docutils==0.2.2
-    - pymsmt==19.0
-    - pyparsing==2.4.0
-    - pyqt5-sip==4.19.18
-    - pyqtchart==5.12
-    - pyqtwebengine==5.12.1
-    - pytest==4.6.3
-    - python-dateutil==2.8.0
-    - pytraj==2.0.5
-    - sander==16.0
-    - scipy==1.3.0
-    - six==1.12.0
-    - smmap==3.0.4
-    - sphinx-autobuild==0.7.1
-    - sphinx-gallery==0.4.0
-    - sphinx-rtd-theme==0.4.3
-    - sphinx-sitemap==1.0.2
-    - sphinxcontrib-bibtex==1.0.0
-    - tqdm==4.42.0
-    - wcwidth==0.1.7
-    - zipp==0.5.1
+    - more-itertools==8.4.0
+    - networkx==2.4
+    - pathspec==0.8.0
+    - pluggy==0.13.1
+    - py==1.9.0
+    - pytest==5.4.3
+    - regex==2020.6.8
+    - sphinx-rtd-theme==0.5.0
+    - sphinx-sitemap==2.1.0
+    - toml==0.10.1
+    - typed-ast==1.4.1
 prefix: /Users/lily/anaconda3/envs/mda
 
