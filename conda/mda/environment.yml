@@ -6,6 +6,7 @@ dependencies:
   - alabaster=0.7.12
   - appnope=0.1.0
   - attrs=19.3.0
+  - autopep8=1.5.3
   - babel=2.8.0
   - backcall=0.2.0
   - bleach=3.1.5
@@ -85,6 +86,7 @@ dependencies:
   - prompt-toolkit=3.0.5
   - psutil=5.7.0
   - ptyprocess=0.6.0
+  - pycodestyle=2.6.0
   - pycparser=2.20
   - pygments=2.6.1
   - pyopenssl=19.1.0
@@ -119,6 +121,7 @@ dependencies:
   - testpath=0.4.4
   - threadpoolctl=2.1.0
   - tk=8.6.10
+  - toml=0.10.1
   - toolz=0.10.0
   - tornado=6.0.4
   - tqdm=4.47.0
@@ -156,7 +159,6 @@ dependencies:
     - regex==2020.6.8
     - sphinx-rtd-theme==0.5.0
     - sphinx-sitemap==2.1.0
-    - toml==0.10.1
     - typed-ast==1.4.1
 prefix: /Users/lily/anaconda3/envs/mda
 
