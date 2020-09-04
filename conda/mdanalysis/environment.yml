@@ -184,6 +184,7 @@ dependencies:
     - imageio==2.6.1
     - imageio-ffmpeg==0.3.0
     - latexcodec==2.0.0
+    - mdanalysistests==1.0.0
     - mock==3.0.5
     - more-itertools==8.3.0
     - moviepy==1.0.1
